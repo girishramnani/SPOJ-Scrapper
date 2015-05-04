@@ -7,6 +7,7 @@ test = requests.get("http://www.spoj.com/problems/classical/")
 data = test.content.decode()
 print(data)
 data= re.sub("[\\n\\t]+","",data)
+
 #for understand the regex for html
 result= re.findall(r"""
     <title>[\w\s\(\)\-]*</title>

@@ -31,3 +31,7 @@ class Snippet(object):
         (?P<name>[\w\s\,]*)
         """,data,re.X|re.M)
         return result
+
+    def get_data_dicts(self,data):
+        data= re.sub("[\\n\\t]+","",data)
+        yield from self.filter(data)

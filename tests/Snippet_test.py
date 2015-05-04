@@ -1,10 +1,14 @@
 __author__ = 'Girish'
 
 import unittest
-
+import requests
 from scrapper import Snippet
 
 class Snippet_test(unittest.TestCase):
+
+    def setUp(self):
+        self.data = requests.get("http://www.spoj.com/problems/classical/")
+        self.data = self.data.content.decode()
     def test_constructor(self):
         Snippet.Snippet()
 
@@ -20,7 +24,10 @@ class Snippet_test(unittest.TestCase):
         generated =Snippet.Snippet(Snippet.Snippet.SPOJ)
         self.assertEqual(str(generated),"SPOJ filter")
 
-
+    def test_data_dict_yielder(self):
+        generated =Snippet.Snippet(Snippet.Snippet.SPOJ)
+        total = list(generated.get_data_dicts(self.data))
+        self.assertEqual(50,len(total))
 
 
 
