@@ -36,4 +36,5 @@ class Snippet(object):
 
     def get_data_dicts(self, data):
         data = re.sub("[\\n\\t]+", "", data)
-        yield from self.filter(data)
+        for match in self.filter(data):
+            yield match.groupdict()

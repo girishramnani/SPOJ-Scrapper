@@ -14,5 +14,5 @@ if __name__=="__main__":
         if d ==5:
             break
         for w in html_snippet.get_data_dicts(i):
-            print(w.groupdict())
+            print(w)
         d+=1
