@@ -9,19 +9,16 @@ class Snippet_test(unittest.TestCase):
         Snippet.Snippet()
 
     def test_constructor_with_args(self):
-        generated =Snippet.snippet(id="",title="")
+        generated =Snippet.Snippet(id="",title="")
+        self.assertEqual(str(generated),"(?P<id>)(?P<title>)")
 
     def test_contructor_with_args_and_filter(self):
-        generated = Snippet.snippet(id=r"\d")
-        generated.addFilter("title",r"[a-z]")
-
-    def test_regex_with_one_arg(self):
-        generated = Snippet.snippet(id=r"\d")
-        self.assertEqual(generated,"(\d)")
+        generated = Snippet.Snippet(id=r"\d")
+        self.assertEqual(str(generated),"(?P<id>\d)")
 
     def test_regex_with_SPOJ_snippet(self):
-        generated =Snippet.snippet(Snippet.SPOJ)
-        self.assertEqual(generated,)
+        generated =Snippet.Snippet(Snippet.Snippet.SPOJ)
+        self.assertEqual(str(generated),"SPOJ filter")
 
 
 

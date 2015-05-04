@@ -8,8 +8,8 @@ class Snippet(object):
     def __init__(self,filter=None,**kwargs):
 
         if filter is None:
-            statement =[r"(?P{}{})".format(key,val) for key,val in kwargs.items()]
-            self.statement = "\n".join(statement)
+            statement =[r"(?P<{}>{})".format(key,val) for key,val in kwargs.items()]
+            self.statement = r"".join(statement)
             self.filter = re.compile(self.statement)
             self.spoj_filter=False
         else:
@@ -18,6 +18,9 @@ class Snippet(object):
 
     def __str__(self):
         return self.statement if not self.spoj_filter else "SPOJ filter"
+
+    def __repr__(self):
+        self.__str__()
 
     @classmethod
     def SPOJ(cls,data):
