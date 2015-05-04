@@ -1,7 +1,7 @@
 __author__ = 'Girish'
 
 from scrapper.Snippet import Snippet
-from scrapper.DataFetcher import DataFetcher
+from scrapper.DataFinder import DataFetcher
 
 # A trial application to get first 250 values
 if __name__ == "__main__":

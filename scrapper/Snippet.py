@@ -28,9 +28,9 @@ class Snippet(object):
     def SPOJ(cls):
         if cls.store == None:
             cls.store = re.compile(r"""
-        (?P<id><td[\s]* class\=\"text\-center\">\s*\d+\s*</td>)
-        ([\s\w\=\<\"]*\>)
-        (<a\s* href\=\"[\w/\.\:\"\s]*>)
+        (?P<id><td[\s]* class=\"text\-center\">\s*\d+\s*</td>)
+        ([\s\w=<\"]*>)
+        (<a\s* href=\"[\w/\.:\"\s]*>)
         (?P<name>[\w\s\,]*)
         """, re.X | re.M)
 
