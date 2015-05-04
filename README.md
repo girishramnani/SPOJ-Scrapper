@@ -31,6 +31,3 @@ To get URL and SPOJ problem number from its name.
 
 NOTE: here (#d) means features required to be implemented in the Iteration ID = d.
 
-<hr>
-
-#### I have some special planned for later.
