@@ -3,16 +3,15 @@ To get URL and SPOJ problem number from its name.
 
 ##The feature list:
 
-+A neat Command line interface. ( #1 )
++ A neat Command line interface. ( #1 )
 
-+Use of `html Snippets` to find content using contentFinder ( # 1)
++ Use of `html Snippets` to find content using contentFinder ( # 1)
 
-+Persistant storage as a cache for opptimized lookup ( # 1 )
++ Persistant storage as a cache for opptimized lookup ( # 1 )
 
-+`Content finder` is decoupled from the `Snippets` logic so can be used in other websites as well
++ `Content finder` is decoupled from the `Snippets` logic so can be used in other websites as well ( #1 )
 
-+Use of Jinja2 to create a `template` which would be used to store the final output of the question as a text or stripped down HTML (optional).
-
++ Use of Jinja2 to create a `template` which would be used to store the final output of the question as a text or stripped down HTML (optional).
 
 
 
@@ -32,3 +31,6 @@ To get URL and SPOJ problem number from its name.
 
 NOTE: here (#d) means features required to be implemented in the Iteration ID = d.
 
+<hr>
+
+#### I have some special planned for later.
