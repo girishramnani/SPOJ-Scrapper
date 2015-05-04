@@ -4,6 +4,7 @@ import re
 
 
 class Snippet(object):
+    store =None
     def __init__(self, filter=None, **kwargs):
         if filter is None:
             statement = [r"(?P<{}>{})".format(key, val) for key, val in kwargs.items()]
@@ -11,7 +12,8 @@ class Snippet(object):
             self.filter = re.compile(self.statement)
             self.spoj_filter = False
         else:
-            self.filter = filter
+
+            self.filter = filter()
             self.spoj_filter = True
 
     def __str__(self):
@@ -21,14 +23,16 @@ class Snippet(object):
         self.__str__()
 
     @classmethod
-    def SPOJ(cls, data):
-        result = re.finditer(r"""
+    def SPOJ(cls):
+        if cls.store==None:
+            cls.store = re.compile(r"""
         (?P<id><td[\s]* class\=\"text\-center\">\s*\d+\s*</td>)
         ([\s\w\=\<\"]*\>)
         (<a\s* href\=\"[\w/\.\:\"\s]*>)
         (?P<name>[\w\s\,]*)
-        """, data, re.X | re.M)
-        return result
+        """, re.X | re.M)
+
+        return cls.store.finditer
 
     def get_data_dicts(self, data):
         data = re.sub("[\\n\\t]+", "", data)
