@@ -9,6 +9,7 @@ class Snippet_test(unittest.TestCase):
     def setUp(self):
         self.data = requests.get("http://www.spoj.com/problems/classical/")
         self.data = self.data.content.decode()
+
     def test_constructor(self):
         Snippet()
 

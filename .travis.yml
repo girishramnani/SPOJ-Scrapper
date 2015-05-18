@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.4"
+install:
+  - pip install requests
+
+
+script:
+  - python -m unittest tests\Snippet_test.py
+  - python -m unitest tests\utils_test.py
