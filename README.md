@@ -3,6 +3,8 @@
 [![Join the chat at https://gitter.im/shreyans800755/SPOJ-Scrapper](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shreyans800755/SPOJ-Scrapper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 To get URL and SPOJ problem number from its name.
 
+[![Build Status](https://travis-ci.org/girishramnani/SPOJ-Scrapper.svg?branch=master)](https://travis-ci.org/girishramnani/SPOJ-Scrapper)
+
 ##The feature list:
 
 + A neat Command line interface. ( #1 )
