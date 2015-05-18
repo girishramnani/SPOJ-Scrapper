@@ -8,3 +8,5 @@ install:
 script:
   - python -m unittest tests\Snippet_test.py
   - python -m unitest tests\utils_test.py
+
+sudo: required
