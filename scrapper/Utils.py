@@ -13,3 +13,17 @@ def cache(filename):
             data_received = f(*args,**kwargs)
 
     return wrapper
+
+
+def time_it(function):
+    import time
+    time_elp = 0
+    def work(*args):
+        nonlocal time_elp
+        ref_time = time.time()
+        result= function(*args)
+        time_elp+=(time.time()-ref_time)
+        setattr(work,"elapsed",time_elp)
+        return result
+
+    return work

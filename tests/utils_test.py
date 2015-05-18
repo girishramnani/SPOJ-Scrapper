@@ -9,6 +9,7 @@ from scrapper import Utils
 class MyTestCase(unittest.TestCase):
 
     # @Utils.cache("data")
+    @Utils.time_it
     def basic_method(self,i):
         if i==0:
             return 0
@@ -22,6 +23,10 @@ class MyTestCase(unittest.TestCase):
     def test_file_present(self):
         import os
         self.assertTrue(os.path.isfile("data.bat"))
+
+    def test_time_it(self):
+        self.basic_method(20)
+        self.assertGreater(self.basic_method.elapsed,0)
 
     @classmethod
     def tearDownClass(cls):
