@@ -28,10 +28,5 @@ class MyTestCase(unittest.TestCase):
         self.basic_method(20)
         self.assertGreater(self.basic_method.elapsed,0)
 
-    # @classmethod
-    # def tearDownClass(cls):
-    #     import os,glob
-    #     for file in glob.glob("data.*"):
-    #         os.remove(file)
 if __name__ == '__main__':
     unittest.main()

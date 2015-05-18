@@ -17,11 +17,15 @@ def cache(filename):
             data_received = f(*args,**kwargs)
             if type(data_received) == dict:
                 cache_memory[data_received['name'].lower()]=data_received['id']
+                if cache_memory.get('max_store_girish',0) < int(data_received['id']):
+                    cache_memory['max_store_girish'] = int(data_received['id'])
+
             else:
                 cache_memory[name] = str(data_received)
+
+
             return data_received
         return work
-
     return wrapper
 
 
