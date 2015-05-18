@@ -14,6 +14,7 @@ class DataFinder(object):
     start ->the initial index
     step -> the step index
     **kwargs ->mappings that will be accepted by the format string ( will be implemented later)
+    yield -> html page as a string
     """
     def __init__(self, url_pattern, start=0, step=50, **kwargs):
         try:

@@ -12,3 +12,4 @@ def cache(filename):
         def work(*args,**kwargs):
             data_received = f(*args,**kwargs)
 
+    return wrapper

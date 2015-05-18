@@ -14,8 +14,9 @@ class Snippet(object):
             self.spoj_filter = False
         else:
 
-            self.filter = filter()
-            self.spoj_filter = True
+            if filter ==self.SPOJ:
+                self.filter = filter()
+                self.spoj_filter = True
         self.numberfilter = re.compile("[\d]+")
 
     def __str__(self):

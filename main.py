@@ -1,11 +1,11 @@
 __author__ = 'Girish'
 
 from scrapper.Snippet import Snippet
-from scrapper.DataFinder import DataFetcher
+from scrapper.DataFinder import DataFinder
 
 # A trial application to get first 250 values
 if __name__ == "__main__":
-    datafetcher = DataFetcher("http://www.spoj.com/problems/classical/sort=0,start={start}")
+    datafetcher = DataFinder("http://www.spoj.com/problems/classical/sort=0,start={start}")
     html_snippet = Snippet(Snippet.SPOJ)
     d = 0
     for i in datafetcher.get_page():
