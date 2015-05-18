@@ -11,20 +11,14 @@ class MyTestCase(unittest.TestCase):
     @Utils.time_it
     @Utils.cache("data")
     def basic_method(self,i):
-        if i==0:
-            return 0
-        if i ==1:
-            return 1
-        return self.basic_method(i-1)+self.basic_method(i-2)
+        z=1
+        for z in range(1,i):
+            z*=i
+        return z
 
     def test_chache(self):
-        self.assertEqual(self.basic_method(15),610)
+        self.assertEqual(self.basic_method(10000),99990000)
         print(self.basic_method.elapsed)
-
-    def test_shelf(self):
-        import shelve
-        t = shelve.open("data",writeback=True)
-        print(t['1'])
 
     def test_file_present(self):
         import os
