@@ -6,27 +6,29 @@ import shelve
 
 #methods not having a specific object association
 
-def cache(filename):
-    cache_memory = shelve.open(filename,writeback=True)
+class cache(object):
 
-    def wrapper(f):
+    @classmethod
+    def Cache(cls,filename):
+        cls.cache_memory = shelve.open(filename)
+        return cls.__call__
+
+    @classmethod
+    def close(cls):
+        cls.cache_memory.close()
+    def __call__(self,f, **kwargs):
         def work(*args,**kwargs):
             name=str(args[1]) # as self would be the first one
-            if name in cache_memory.keys():
-                return int(cache_memory.get(name))
+            if name in self.cache_memory.keys():
+                return int(self.cache_memory.get(name))
             data_received = f(*args,**kwargs)
             if type(data_received) == dict:
-                cache_memory[data_received['name'].lower()]=data_received['id']
-                if cache_memory.get('max_store_girish',0) < int(data_received['id']):
-                    cache_memory['max_store_girish'] = int(data_received['id'])
-
+                self.cache_memory[data_received['name'].lower()]=data_received['id']
             else:
-                cache_memory[name] = str(data_received)
-
+                self.cache_memory[name] = str(data_received)
 
             return data_received
         return work
-    return wrapper
 
 
 
