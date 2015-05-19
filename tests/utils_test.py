@@ -34,7 +34,13 @@ class MyTestCase(unittest.TestCase):
         self.basic_method(10000000)
         self.assertLess(self.basic_method.elapsed,1)
 
-
+    @classmethod
+    def tearDownClass(cls):
+        Utils.cache.close()
+        import glob
+        import os
+        for file in glob.glob("data.*"):
+            os.remove(os.path.abspath(file))
 
 if __name__ == '__main__':
     unittest.main()
