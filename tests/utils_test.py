@@ -25,10 +25,6 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.basic_method(10000),99990000)
 
 
-    def test_file_present(self):
-        import os
-        self.assertTrue(os.path.isfile("./data.dat"))
-
     def test_time_it(self):
         self.basic_method(10000000)
         self.assertLess(self.basic_method.elapsed,2)
