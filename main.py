@@ -1,5 +1,7 @@
 import shelve
 
+
+
 __author__ = 'Girish'
 
 from scrapper.Snippet import Snippet
@@ -31,7 +33,7 @@ try:
             if name in data_store.keys():
                 return data, data_store[name]
 
-            disp =["\\",'|','/','--']
+            disp =["\\",'|','/','-']
 
             datafetcher = DataFinder("http://www.spoj.com/problems/classical/sort=0,start={start}",start=data)
             html_snippet = Snippet(Snippet.SPOJ)
@@ -39,7 +41,7 @@ try:
             for i in datafetcher.get_page():
                 for w in html_snippet.get_data_dicts(i):
                     data_store[w['name'].lower()] = w['id']
-                    if w['name'].lower() ==name:
+                    if w['name'].lower() == name:
                         return data,w['id']
                     print("\r{} indexing ..{} ".format(disp[ind],w['id']),end="")
                     ind+=1
@@ -55,3 +57,4 @@ except KeyboardInterrupt:
 else:
     with open("data","w") as file:
         file.write(str(50*(data//50)))
+

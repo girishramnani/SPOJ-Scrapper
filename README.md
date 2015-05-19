@@ -17,6 +17,14 @@ To get URL and SPOJ problem number from its name.
 
 + Use of Jinja2 to create a `template` which would be used to store the final output of the question as a text or stripped down HTML (optional).
 
+##Results:
+
+the first iteration of the project is complete
+
+just fork the project ,install the dependencies using `pip3 install -r requirements.txt` and then <br>
+
+`python3 main.py "Aliens"`  and you will get the specific index
+
 
 
 
@@ -32,6 +40,8 @@ To get URL and SPOJ problem number from its name.
 ####Iteration ID:
 
 1) the actual requirement of the project is to create a lookup table to Question_name -> ID the first iteration would contain that much with a neat commandline tool.
+2) i know this application isnt big or does something magical but i have tried to make this project with TDD and also i like to make small things big ;->
 
 NOTE: here (#d) means features required to be implemented in the Iteration ID = d.
+
 
