@@ -31,7 +31,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_time_it(self):
         self.basic_method(10000000)
-        self.assertLess(self.basic_method.elapsed,1)
+        self.assertLess(self.basic_method.elapsed,2)
 
     @classmethod
     def tearDownClass(cls):
