@@ -11,7 +11,6 @@ class cache(object):
     @classmethod
     def Cache(cls,filename):
         cls.cache_memory = shelve.open(filename)
-        return cls.__call__
 
     @classmethod
     def close(cls):

@@ -1,3 +1,5 @@
+from scrapper import Utils
+
 __author__ = 'Girish'
 
 import re
@@ -5,7 +7,6 @@ import re
 
 class Snippet(object):
     store = None
-
     def __init__(self, filter=None, **kwargs):
         if filter is None:
             statement = [r"(?P<{}>{})".format(key, val) for key, val in kwargs.items()]
