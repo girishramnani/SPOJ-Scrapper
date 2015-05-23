@@ -23,3 +23,5 @@ var/
 .installed.cfg
 *.egg
 
+#pycharm files
+.idea/*
