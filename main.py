@@ -41,6 +41,7 @@ try:
             for i in datafetcher.get_page():
                 for w in html_snippet.get_data_dicts(i):
                     data_store[w['name'].lower()] = w['id']
+                    
                     if w['name'].lower() == name:
                         return data,w['id']
                     print("\r{} indexing ..{} ".format(disp[ind],w['id']),end="")
@@ -48,12 +49,15 @@ try:
                     ind%=4
                     data+=1
             return None,None
+    
     data,id_ = find(sys.argv[1],data)
-    print()
+    print(data)
     print("the ID of the question is ",id_)
+
 except KeyboardInterrupt:
     with open("data","w") as file:
-        file.write(str(50*(data//50)))
+    	print("Writing to the file")
+    	file.write(str(50*(data//50)))
 else:
     with open("data","w") as file:
         file.write(str(50*(data//50)))
