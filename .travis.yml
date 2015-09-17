@@ -9,4 +9,12 @@ script:
   - python -m unittest tests/Snippet_test.py
   - python -m unittest tests/utils_test.py
 
+
+before_install:
+  - pip install codecov
+
+after_success:
+  - codecov
+
+
 sudo: required
