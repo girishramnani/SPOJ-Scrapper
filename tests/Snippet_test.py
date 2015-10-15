@@ -2,7 +2,16 @@ __author__ = 'Girish'
 
 import unittest
 import requests
+import os
+import sys
+
+os1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path+=os1
+
 from scrapper.Snippet import Snippet
+
+
+
 
 class Snippet_test(unittest.TestCase):
 
