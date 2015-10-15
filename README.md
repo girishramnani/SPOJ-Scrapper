@@ -4,6 +4,7 @@
 To get URL and SPOJ problem number from its name.
 
 [![Build Status](https://travis-ci.org/girishramnani/SPOJ-Scrapper.svg?branch=master)](https://travis-ci.org/girishramnani/SPOJ-Scrapper)
+[![codecov.io](http://codecov.io/github/girishramnani/SPOJ-Scrapper/coverage.svg?branch=master)](http://codecov.io/github/girishramnani/SPOJ-Scrapper?branch=master)
 
 ##The feature list:
 
@@ -22,6 +23,7 @@ To get URL and SPOJ problem number from its name.
 the first iteration of the project is complete
 
 just clone the project ,install the dependencies using `pip3 install -r requirements.txt` and then <br>
+
 
 `python3 main.py "Aliens"`  and you will get the specific index
 
