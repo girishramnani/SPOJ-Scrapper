@@ -10,8 +10,8 @@ before_install:
   
   
 script:
-  - python -m unittest tests/Snippet_test.py
-  - python -m unittest tests/utils_test.py
+  - coverage run tests/Snippet_test.py
+  - coverage run tests/utils_test.py
 
 
 
