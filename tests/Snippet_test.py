@@ -24,9 +24,6 @@ class Snippet_test(unittest.TestCase):
     def test_constructor(self):
         Snippet()
 
-    def test_constructor_with_args(self):
-        generated =Snippet(id="",title="")
-        self.assertEqual(str(generated),"(?P<title>)(?P<id>)")
 
     def test_contructor_with_args_and_filter(self):
         generated = Snippet(id=r"\d")
