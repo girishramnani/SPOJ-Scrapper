@@ -15,9 +15,8 @@ class Snippet(object):
             self.spoj_filter = False
         else:
 
-            if filter ==self.SPOJ:
-                self.filter = filter()
-                self.spoj_filter = True
+            self.filter = filter()
+            self.spoj_filter = True
         self.numberfilter = re.compile("[\d]+")
 
     def __str__(self):
@@ -37,6 +36,19 @@ class Snippet(object):
         """, re.X | re.M)
 
         return cls.store.finditer
+
+    @classmethod
+    def LINKS(cls):
+        if cls.store == None:
+            cls.store = re.compile(r"""
+        (?P<id><td[\s]* class=\"text\-center\">\s*\d+\s*</td>)
+        ([\s\w=<\"]*>)
+        (<a\s* href=\")
+        (?P<link>[\w/\.:\s]*)
+        
+        """, re.X | re.M)
+        return cls.store.finditer
+        
 
     def get_data_dicts(self, data):
         data = re.sub("[\\n\\t]+", "", data)
